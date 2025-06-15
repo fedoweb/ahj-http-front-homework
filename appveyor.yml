@@ -4,24 +4,24 @@ environment:
   nodejs_version: "18"
   GITHUB_TOKEN:
     secure: 2YjVzBsSXLSSFG4rX5qAPqRr2vbfr1EcYFeIwAdV6hZyCVFcoV2PNG3R/BbdeJf7
-  matrix:
-    - NODE_ENV: production
-      API_BASE_URL: https://ahj-http-back-homework.onrender.com
 
 install:
   - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   - export NVM_DIR="$HOME/.nvm"
+  - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   - nvm install $nodejs_version
-  - npm install
-  - npm install webpack webpack-cli --save-dev
+  - npm install -g npm@latest
+  - npm ci # Вместо npm install, для точного соответствия package-lock.json
+  - npm install webpack@5.89.0 webpack-cli@5.1.4 --save-dev --save-exact
 
 build_script:
-  - pwd  # Выведем текущее расположение для диагностики
-  - npm list webpack
+  - echo "Node version: $(node -v)"
+  - echo "NPM version: $(npm -v)"
+  - npm list webpack --depth=0
   - npm run build:prod
 
 on_success:
   - git config --global user.email "appveyor@example.com"
   - git config --global user.name "Appveyor CI"
   - git remote set-url origin https://$GITHUB_TOKEN@github.com/fedoweb/ahj-http-front-homework.git
-  - npx gh-pages -d dist -r https://$GITHUB_TOKEN@github.com/fedoweb/ahj-http-front-homework.git
+  - npx gh-pages -d dist
