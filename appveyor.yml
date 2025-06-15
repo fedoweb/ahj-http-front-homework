@@ -17,7 +17,7 @@ install:
 
 build_script:
   - pwd  # Выведем текущее расположение для диагностики
-  - export PATH=$PATH:$PWD/node_modules/.bin
+  - npm list webpack
   - npm run build:prod
 
 on_success:
