@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.spinner {
+  width: 25px;
+  height: 25px;
+}
+
+.btn {
+  margin-left: auto;
+  padding: 10px;
+  color: rgb(119, 119, 119);
+  border: 1px solid rgb(119, 119, 119);
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ticket_btn {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 50%;
+  color: rgb(119, 119, 119);
+  cursor: pointer;
+}
+
+.ticket_status {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 25px;
+  height: 25px;
+  margin: 0;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+}
+
+.ticket_status:checked {
+  background: white;
+  border-color: rgb(119, 119, 119);
+}
+
+.ticket_status:checked::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  color: rgb(119, 119, 119);
+  font-size: 16px;
+}
+
+.form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  min-width: 200px;
+  padding: 10px 20px;
+  border: 1px solid rgb(119, 119, 119);
+  background-color: white;
+  border-radius: 10px;
+
+  font-family: inherit;
+  color: rgb(119, 119, 119);
+}
+
+.form_name {
+  color: inherit;
+}
+
+.form_description {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(119, 119, 119);
+}
+
+.button_container {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.tickets_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+
+  color: rgb(119, 119, 119);
+}
+
+.ticket_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 10px;
+}
+
+.ticket_main_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 60%;
+}
