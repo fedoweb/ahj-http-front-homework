@@ -19,7 +19,6 @@ export default class TicketRender {
 
   drawFullTicket(ticket) {
     if(!ticket) return;
-    console.log(ticket);
 
     const container = document.querySelector(`[data-id=${ticket.id}]`);
     const mainContent = container.querySelector('.ticket_main_content');

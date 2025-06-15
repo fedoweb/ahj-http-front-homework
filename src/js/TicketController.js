@@ -58,7 +58,6 @@ export default class TicketController {
 
   onSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target);
 
       if (e.target.name === 'addForm') {
         const name = e.target.querySelector('.form_name').value;

@@ -9,8 +9,6 @@
     "test:watch": "jest --watch",
     "coverage": "jest --coverage",
     "build": "webpack",
-    "build:dev": "NODE_ENV=development webpack",
-    "build:prod": "NODE_ENV=production ./node_modules/.bin/webpack --mode production",
     "deploy": "gh-pages -d dist",
     "start": "webpack serve --open",
     "lint": "eslint src",

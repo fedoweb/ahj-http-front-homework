@@ -2,13 +2,7 @@
 
 export default class ApiService {
   constructor() {
-    this.baseUrl = process.env.API_BASE_URL || 'http://localhost:3030';
-    this.ticket;
-    //this.init();
-  }
-
-  async init() {
-    //await this.getAllTicket();
+    this.baseUrl = 'https://ahj-http-back-homework.onrender.com';
   }
 
   async createTicket(ticket) {

@@ -13,8 +13,8 @@ install:
   - npm install webpack webpack-cli gh-pages --save-dev
 
 build_script:
-  - npm run build:prod
-  - ls -R dist  # Проверка содержимого папки dist
+  - npm run build
+  - ls -R dist
 
 on_success:
   - git config --global user.email "appveyor@example.com"
