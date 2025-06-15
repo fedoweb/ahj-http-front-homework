@@ -16,7 +16,7 @@ install:
   - npm install webpack webpack-cli --save-dev
 
 build_script:
-  - cd $(APPVEYOR_BUILD_FOLDER)
+  - pwd  # Выведем текущее расположение для диагностики
   - export PATH=$PATH:$PWD/node_modules/.bin
   - npm run build:prod
 
