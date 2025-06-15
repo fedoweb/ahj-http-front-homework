@@ -68,10 +68,7 @@ module.exports = (env) => {
                   noErrorOnMissing: true 
                 }
               ]
-          }),
-          new Dotenv({                      
-          systemvars: true               
-        })
+          })
       ],
     }
 };

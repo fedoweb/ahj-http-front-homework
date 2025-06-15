@@ -13,11 +13,12 @@ install:
   - export NVM_DIR="$HOME/.nvm"
   - nvm install $nodejs_version
   - npm install
-  - npm install webpack webpack-cli gh-pages --save-dev
+  - npm install webpack webpack-cli --save-dev
 
 build_script:
+  - cd $(APPVEYOR_BUILD_FOLDER)
+  - export PATH=$PATH:$PWD/node_modules/.bin
   - npm run build:prod
-  - ls -R dist  # Проверка содержимого папки dist
 
 on_success:
   - git config --global user.email "appveyor@example.com"
