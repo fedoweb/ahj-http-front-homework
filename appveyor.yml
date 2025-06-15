@@ -4,6 +4,9 @@ environment:
   nodejs_version: "18"
   GITHUB_TOKEN:
     secure: 2YjVzBsSXLSSFG4rX5qAPqRr2vbfr1EcYFeIwAdV6hZyCVFcoV2PNG3R/BbdeJf7
+  matrix:
+    - NODE_ENV: production
+      API_BASE_URL: https://ahj-http-back-homework.onrender.com
 
 install:
   - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -13,7 +16,7 @@ install:
   - npm install webpack webpack-cli gh-pages --save-dev
 
 build_script:
-  - npm run build
+  - npm run build:prod
   - ls -R dist  # Проверка содержимого папки dist
 
 on_success:
